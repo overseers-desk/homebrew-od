@@ -1,15 +1,15 @@
-# Homebrew formula for mailroom.
+# Homebrew formula for courier.
 # Install:
-#   brew tap overseers-desk/ot
-#   brew install mailroom
+#   brew tap overseers-desk/od
+#   brew install courier
 
-class Mailroom < Formula
+class Courier < Formula
   include Language::Python::Virtualenv
 
   desc "Email toolkit for AI assistants and command-line scripting"
-  homepage "https://github.com/overseers-desk/mailroom"
-  url "https://github.com/overseers-desk/mailroom/archive/refs/tags/v1.1.15.tar.gz"
-  sha256 "930787e92e85ea37a410e7783c51117c6777d095e43863a32522de838a92b975"
+  homepage "https://github.com/overseers-desk/courier"
+  url "https://files.pythonhosted.org/packages/88/69/9c0174e4d185279dac7962ef7a3b54832f1a3a007a965c8cbb3f0127c8fb/courier-1.1.15.tar.gz"
+  sha256 "1b5a97de5dc9195325f048306b9a96134db99c0cd7ee53859be18eed7e9e26e3"
   license "MIT"
 
   depends_on "python@3.13"
@@ -114,16 +114,16 @@ class Mailroom < Formula
     virtualenv_install_with_resources
 
     if OS.mac?
-      # Wrap mailroom so the bottled python@3.13's pyexpat resolves
+      # Wrap courier so the bottled python@3.13's pyexpat resolves
       # against Homebrew's expat instead of the macOS system one.
-      target = libexec/"bin/mailroom"
-      (bin/"mailroom").unlink if (bin/"mailroom").exist?
-      (bin/"mailroom").write_env_script target,
+      target = libexec/"bin/courier"
+      (bin/"courier").unlink if (bin/"courier").exist?
+      (bin/"courier").write_env_script target,
         DYLD_LIBRARY_PATH: "#{Formula["expat"].opt_lib}:$DYLD_LIBRARY_PATH"
     end
   end
 
   test do
-    assert_match "Email toolkit", shell_output("#{bin}/mailroom --help")
+    assert_match "Email toolkit", shell_output("#{bin}/courier --help")
   end
 end
