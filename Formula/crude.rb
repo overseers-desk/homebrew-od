@@ -1,6 +1,6 @@
 # Homebrew formula for crude.
 # Install:
-#   brew tap overseers-desk/ot
+#   brew tap overseers-desk/od
 #   brew install crude
 
 class Crude < Formula
