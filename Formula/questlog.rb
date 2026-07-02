@@ -1,13 +1,13 @@
 # Homebrew formula for questlog.
 # Install:
-#   brew tap overseers-desk/ot
+#   brew tap overseers-desk/od
 #   brew install questlog
 
 class Questlog < Formula
   desc "GUI for finding, reading, and reopening past Claude Code sessions"
   homepage "https://github.com/overseers-desk/questlog"
   url "https://github.com/overseers-desk/questlog/archive/refs/tags/v1.1.5.tar.gz"
-  sha256 "400b08509da6bcad99aba4c2446b919dbcf260f6f1ea9aaa5f0f0209d643084b"
+  sha256 "442e1548b44bfdc3e6a6105c2d8f1d54974fe0e32ada587f40c10383c783a9dd"
   license "MIT"
 
   depends_on "tcl-tk"
