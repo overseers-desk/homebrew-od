@@ -7,15 +7,16 @@
 # records through sox (coreaudio) and delivers through the system's own
 # osascript (Cmd+V paste, keystroke typing) and pbcopy; the macOS delivery
 # paths are a best-attempt port, untested on real hardware so far. On Linux
-# it prefers sox and falls back to pw-record, with dotool for keystrokes and
-# wl-copy/xclip for the clipboard (from the distro, not this formula). The
-# optional style pass needs the json/yaml (tcllib) and tls Tcl packages.
+# it records with pw-record (sox is the fallback when pw-record is absent),
+# with dotool for keystrokes and wl-copy/xclip for the clipboard (from the
+# distro, not this formula). The optional style pass needs the json/yaml
+# (tcllib) and tls Tcl packages.
 
 class Scribe < Formula
   desc "Take dictation or clipboard text, restyle it, and type/paste it back"
   homepage "https://github.com/overseers-desk/scribe"
   url "https://github.com/overseers-desk/scribe/archive/refs/tags/v0.6.2.tar.gz"
-  sha256 "2e463c2ca4664d9c702fa5cc90400d6513a1c0d732c26de21fcb45928971398e"
+  sha256 "aea61a9c26fc5bb9cd27c034dd342ea8a2cead76bb4693c7a5eb3f0bff2de309"
   license "GPL-3.0-only"
 
   depends_on "tcl-tk"
