@@ -3,21 +3,25 @@
 #   brew tap overseers-desk/od
 #   brew install scribe
 #
-# NOTE: scribe runs without configuration as a dictation tool, but its Linux
-# runtime is still incomplete on macOS: it shells out to dotool (uinput
-# keystrokes), parecord (PulseAudio), and wl-copy (Wayland clipboard), and the
-# optional style pass needs the json/yaml (tcllib) and tls Tcl packages. This
-# formula installs cleanly so the tap is usable; the macOS port — native paste
-# via Cmd+V, pbcopy, a mic backend — is tracked separately.
+# NOTE: scribe runs without configuration as a dictation tool. On macOS it
+# records through sox (coreaudio) and delivers through the system's own
+# osascript (Cmd+V paste, keystroke typing) and pbcopy; the macOS delivery
+# paths are a best-attempt port, untested on real hardware so far. On Linux
+# it prefers sox and falls back to pw-record, with dotool for keystrokes and
+# wl-copy/xclip for the clipboard (from the distro, not this formula). The
+# optional style pass needs the json/yaml (tcllib) and tls Tcl packages.
 
 class Scribe < Formula
   desc "Take dictation or clipboard text, restyle it, and type/paste it back"
   homepage "https://github.com/overseers-desk/scribe"
-  url "https://github.com/overseers-desk/scribe/archive/refs/tags/v0.6.1.tar.gz"
-  sha256 "8bd7396b3acf7a569a70ae5ae3ee7e82ebcf7dab9ad3ac19332ad229fc6b467b"
+  url "https://github.com/overseers-desk/scribe/archive/refs/tags/v0.6.2.tar.gz"
+  sha256 "2e463c2ca4664d9c702fa5cc90400d6513a1c0d732c26de21fcb45928971398e"
   license "GPL-3.0-only"
 
   depends_on "tcl-tk"
+  on_macos do
+    depends_on "sox"
+  end
 
   def install
     # scribe.tcl finds its sibling config/data via APP_DIR = dirname of the
@@ -36,6 +40,15 @@ class Scribe < Formula
     end
     chmod 0755, pkgshare/"scribe.tcl"
     bin.install_symlink pkgshare/"scribe.tcl" => "scribe"
+  end
+
+  def caveats
+    <<~EOS
+      Dictation (--input mic) needs whisper-cli and a whisper model:
+        brew install whisper-cpp
+      then pass --model /path/to/ggml-*.bin.
+      #{"On macOS, grant the app that launches scribe (e.g. your terminal) Accessibility permission (typing/pasting) and Microphone permission, under System Settings > Privacy & Security." if OS.mac?}
+    EOS
   end
 
   test do
