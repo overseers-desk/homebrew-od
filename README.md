@@ -19,5 +19,3 @@ brew install crude courier questlog
 - **scribe:** hotkey dictation and clipboard restyling.
 
 Each formula pulls its release tarball from the tool's own repository (or PyPI), so this tap holds no source code and cuts no releases of its own. A tool release is a single-formula edit here: bump the `url` and `sha256` in `Formula/<tool>.rb` after the tool's release is published.
-
-The Overseer's Desk Claude Code plugins (skillbooks, holotapes) live in a separate marketplace at `overseers-desk/overseers-desk`.
