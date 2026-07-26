@@ -8,8 +8,8 @@ class Majordomo < Formula
 
   desc "Read and report Google Chat task activity"
   homepage "https://github.com/overseers-desk/majordomo"
-  url "https://files.pythonhosted.org/packages/33/ab/bb140fb6d197239a3b25259fc1fd4912f54d784df16ef81f70ac07f0245c/majordomo-0.1.6.tar.gz"
-  sha256 "1cb0a9dbcd66fa82a2eda56925abc22ef8813bae901c2dd91186167d937cfc69"
+  url "https://files.pythonhosted.org/packages/01/58/bdfe6ba54b492d0bb3dc2f1dc935e8c4cdbc3b5ceb40c2cf91ace66bbf2e/majordomo-0.1.7.tar.gz"
+  sha256 "818113dbe5eedc869b6ded8e0993644b4e921cb5cc8301dc0363a192daf1bd96"
   license "GPL-3.0-only"
 
   depends_on "python@3.13"
