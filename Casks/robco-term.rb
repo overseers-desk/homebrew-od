@@ -5,8 +5,8 @@
 #   brew install --cask robco-term
 
 cask "robco-term" do
-  version "0.1.4"
-  sha256 "c75ce7fb90898ce444b48e0389c02895393982ee0ddf977349dcc02ec25a629f"
+  version "0.1.5"
+  sha256 "4e3cb40baad7a6d92050780eed773dc968d00cf655bde95dd96d4fc65856d33d"
 
   url "https://github.com/overseers-desk/robco-term/releases/download/v#{version}/robco-term-#{version}-macos-arm64.dmg"
   name "RobCo Terminal"
