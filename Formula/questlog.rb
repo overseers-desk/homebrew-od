@@ -15,7 +15,7 @@ class Questlog < Formula
   def install
     # modules/ and vendor/ hold the Tcl modules the launcher puts on the tm
     # path; without them package require streamtree et al. fails at startup.
-    pkgshare.install "config.tcl", "lib", "ui", "cli", "data", "modules", "vendor"
+    pkgshare.install "lib", "ui", "cli", "data", "modules", "vendor"
 
     # questlog sources lib/ and ui/ relative to ROOT and runs under tclsh, loading
     # Tk only in GUI mode. Point ROOT at the installed tree, and pin the shebang to
