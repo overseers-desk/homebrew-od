@@ -6,8 +6,8 @@
 class Questlog < Formula
   desc "GUI for finding, reading, and reopening past Claude Code sessions"
   homepage "https://github.com/overseers-desk/questlog"
-  url "https://github.com/overseers-desk/questlog/archive/refs/tags/v1.2.1.tar.gz"
-  sha256 "27bbb92731c54cc7be5966ed5add14e1d3a1d0b9686e3e222227a290df684bf7"
+  url "https://github.com/overseers-desk/questlog/archive/refs/tags/v1.2.2.tar.gz"
+  sha256 "36e6266edae7fffbb3e764d2bfac0560051bfea232c85e34f364de5d7c32b4b4"
   license "MIT"
 
   depends_on "tcl-tk"
