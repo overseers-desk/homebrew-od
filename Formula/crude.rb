@@ -8,8 +8,8 @@ class Crude < Formula
 
   desc "CRUD-style command-line clients for sites without a public API"
   homepage "https://github.com/overseers-desk/crude"
-  url "https://github.com/overseers-desk/crude/archive/refs/tags/v1.5.0.tar.gz"
-  sha256 "d6670b6104aac7c1119593bf3d54fadaf3ffb9dc96be4ad5c1144644b88f163a"
+  url "https://github.com/overseers-desk/crude/archive/refs/tags/v1.6.0.tar.gz"
+  sha256 "9c940373572a2ccb02976d41dd55092467fa2999b66bddebc94d866c19e8ba54"
   license "MIT"
 
   depends_on "python@3.13"
@@ -102,7 +102,7 @@ class Crude < Formula
     if OS.mac?
       # Wrap each binary so the bottled python's pyexpat resolves against
       # Homebrew's expat instead of the system one.
-      %w[crude crude-atdw crude-skal crude-rezdy crude-deputy crude-sonas crude-xero crude-airwallex crude-clover crude-facebook].each do |exe|
+      %w[crude crude-atdw crude-skal crude-rezdy crude-deputy crude-sonas crude-xero crude-airwallex crude-clover crude-facebook crude-mautic crude-wise].each do |exe|
         target = libexec/"bin/#{exe}"
         (bin/exe).unlink if (bin/exe).exist?
         (bin/exe).write_env_script target,
