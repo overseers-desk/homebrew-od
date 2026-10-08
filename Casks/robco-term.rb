@@ -5,8 +5,8 @@
 #   brew install --cask robco-term
 
 cask "robco-term" do
-  version "0.1.8"
-  sha256 "407296318c50f1d40d5dee84e69d219b4230e8a6825485d44785989754d3b0c2"
+  version "0.3.0"
+  sha256 "c21b6aafeb15eb2ba1a7672bbb3608a4a8079c4a0fcc0910258d003be6b30fb8"
 
   url "https://github.com/overseers-desk/robco-term/releases/download/v#{version}/robco-term-#{version}-macos-arm64.dmg"
   name "RobCo Terminal"
@@ -39,3 +39,4 @@ cask "robco-term" do
       xattr -d com.apple.quarantine "/Applications/RobCo Terminal.app"
   CAVEATS
 end
+
