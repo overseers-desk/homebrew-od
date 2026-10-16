@@ -8,8 +8,8 @@ class Courier < Formula
 
   desc "Email toolkit for AI assistants and command-line scripting"
   homepage "https://github.com/overseers-desk/courier"
-  url "https://files.pythonhosted.org/packages/69/b3/525f255f3514ef520941d4aa65b117dae0940ab964ecbad624430accdf30/courier-1.1.21.tar.gz"
-  sha256 "c530ec88681e519f541247b17008d754a844117ac69e7360437dfa9f8f6704a2"
+  url "https://files.pythonhosted.org/packages/4c/45/c7c496a9bccdf92cd777e369503903878850a9a23c3bd19403982ed117ee/courier-1.1.22.tar.gz"
+  sha256 "397170728030a06733adb4f664c05fee1fa039cf98acc10e406071a7e8197f7e"
   license "MIT"
 
   depends_on "python@3.13"
