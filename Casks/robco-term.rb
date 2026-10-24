@@ -6,7 +6,7 @@
 
 cask "robco-term" do
   version "0.3.4"
-  sha256 "b02e9b09af13e7738b60c3937ad5ed43dae68150a5c11bff07e22dce0c022923"
+  sha256 "50c759f34197a90164146a73a8a801c38a31a7bd88b452d32d19cda58e0ca042"
 
   url "https://github.com/overseers-desk/robco-term/releases/download/v#{version}/robco-term-#{version}-macos-arm64.dmg"
   name "RobCo Terminal"
