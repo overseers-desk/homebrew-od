@@ -8,8 +8,8 @@ class Crude < Formula
 
   desc "CRUD-style command-line clients for sites without a public API"
   homepage "https://github.com/overseers-desk/crude"
-  url "https://github.com/overseers-desk/crude/archive/refs/tags/v1.6.6.tar.gz"
-  sha256 "0155d5b1b989cc417af974b1a6cc323e913152f9a3bcf9d06b0268a907074a05"
+  url "https://github.com/overseers-desk/crude/archive/refs/tags/v1.8.0.tar.gz"
+  sha256 "2874564bc79ada33cc64ca2752363b3ecd0687bcdeed16f5f19944eeb34c485d"
   license "MIT"
 
   depends_on "python@3.13"
